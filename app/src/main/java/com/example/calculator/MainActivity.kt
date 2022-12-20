@@ -42,5 +42,18 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        btnMul.setOnClickListener{
+            if(edtNo1.text.toString()!="" && edtNo2.text.toString()!=""){
+                val no1 = edtNo1.text.toString.toInt()
+                val no2 = edtNo2.text.toString().toInt()
+                val mul = no1*no2
+
+                Toast.makeText(this,"The Product is $mul",Toast.LENGTH_LONG).show()
+
+            }else{
+                Toast.makeText(this,"Please Fill all the Required").show();
+            }
+        }
+
     }
 }
