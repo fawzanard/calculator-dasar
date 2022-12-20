@@ -22,5 +22,25 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        btnSub.setOnClickListener{
+            if (edtNo1.text.toString()!="" && edtNo2.text.toString()!=""){
+                val no1 = edtNo1.text.toString().toInt()
+                val no2 = edtNo2.text.toString().toInt()
+                var sub : Int
+
+                sub = if(no1>no2){
+                    no1 - no2
+                } else {
+                    no2 - no1
+                }
+
+                Toast.makeText(this,"The Difference is $sub",Toast.LENGTH_LONG).show()
+
+            }else{
+                Toast.makeText(this,"Please Fill all the Required Blanks.", Toast.LENGTH_LONG).show()
+            }
+
+        }
+
     }
 }
