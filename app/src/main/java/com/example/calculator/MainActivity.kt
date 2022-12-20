@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
                 val no2 = edtNo2.text.toString().toInt()
                 val sum = no1+no2
 
-                Toast.makeText(this,"The Sum is $sum",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Hasil $sum",Toast.LENGTH_LONG).show()
             }else{
-                Toast.makeText(this,"Please Fill all the Required Blanks.",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Masukan angka terlebih dahulu.",Toast.LENGTH_LONG).show()
             }
         }
 
@@ -34,24 +34,43 @@ class MainActivity : AppCompatActivity() {
                     no2 - no1
                 }
 
-                Toast.makeText(this,"The Difference is $sub",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Hasil $sub",Toast.LENGTH_LONG).show()
 
             }else{
-                Toast.makeText(this,"Please Fill all the Required Blanks.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Masukan angka terlebih dahulu.", Toast.LENGTH_LONG).show()
             }
 
         }
 
         btnMul.setOnClickListener{
             if(edtNo1.text.toString()!="" && edtNo2.text.toString()!=""){
-                val no1 = edtNo1.text.toString.toInt()
+                val no1 = edtNo1.text.toString().toInt()
                 val no2 = edtNo2.text.toString().toInt()
                 val mul = no1*no2
 
-                Toast.makeText(this,"The Product is $mul",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Hasil $mul",Toast.LENGTH_LONG).show()
 
             }else{
-                Toast.makeText(this,"Please Fill all the Required").show();
+                Toast.makeText(this,"Masukan angka terlebih dahulu.",Toast.LENGTH_LONG).show();
+            }
+        }
+
+        btnDiv.setOnClickListener{
+            if(edtNo1.text.toString()!="" && edtNo2.text.toString()!=""){
+                val no1 = edtNo1.text.toString().toInt()
+                val no2 = edtNo2.text.toString().toInt()
+
+                var div : Int
+                if(no2==0){
+                    div = 0
+                    Toast.makeText(this,"Angka tidak dapat dibagi dengan nol karena menghasilkan solusi tak terbatas.",Toast.LENGTH_LONG).show()
+                }else {
+                    div = no1 / no2
+                }
+                Toast.makeText(this,"Hasil $div",Toast.LENGTH_LONG).show()
+
+            }else{
+                Toast.makeText(this,"Masukan angka terlebih dahulu.",Toast.LENGTH_LONG).show();
             }
         }
 
